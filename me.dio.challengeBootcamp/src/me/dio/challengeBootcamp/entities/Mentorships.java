@@ -1,9 +1,42 @@
 package me.dio.challengeBootcamp.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Mentorships {
 	private String title;
 	private String description;
-	private Date mentoringDate;
+	private LocalDate mentoringDate;
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public LocalDate getMentoringDate() {
+		return mentoringDate;
+	}
+	
+	public void setMentoringDate(LocalDate mentoringDate) {
+		this.mentoringDate = mentoringDate;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Mentorships [title=" + title + ", description=" + description + ", mentoringDate=" + mentoringDate
+				+ "]";
+	}
+	
+	
 }

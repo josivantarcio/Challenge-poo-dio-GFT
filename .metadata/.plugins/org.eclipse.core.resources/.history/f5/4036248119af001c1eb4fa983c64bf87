@@ -1,0 +1,8 @@
+package me.dio.challengeBootcamp.entities;
+
+public class Test {
+	public static void main(String[] args) {
+		Course course = new Course();
+		
+	}
+}
