@@ -1,0 +1,11 @@
+package me.dio.challengeBootcamp.entities;
+
+public abstract class Content {
+	
+	protected String title;
+	protected String description;
+	protected final double XP_PADRAO = 10;
+	
+	public abstract double calculeteXP();
+
+}

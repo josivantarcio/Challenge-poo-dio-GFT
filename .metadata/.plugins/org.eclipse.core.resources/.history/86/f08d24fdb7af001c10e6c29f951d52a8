@@ -1,0 +1,82 @@
+package me.dio.challengeBootcamp.entities;
+
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+
+public class Dev {
+	private String name;
+	/**
+	 * We will use Set() so that the user will not be included again in the same course.
+	 */
+	private Set<Content> contentConcluded = new LinkedHashSet<>(); 
+	private Set<Content> contentRegistered = new LinkedHashSet<>();
+	
+	public void writeBootcamp(Bootcamp bootcamp) {
+		this.contentRegistered.addAll(bootcamp.getContents());
+		bootcamp.getRegistereDevs().add(this);
+	}
+	
+	public void progress() {
+		Optional<Content> content = this.contentRegistered.stream().findFirst();
+		if(content.isPresent()) {
+			this.contentConcluded.add(content.get()); // Includes the recorded content in the completed list.
+			this.contentRegistered.remove(content.get()); // Removes the registered content as it completes the bootcamp.
+		}else {
+			System.err.println("You are not enrolled in any Bootcamp");
+		}
+	}
+	
+	public double calcTotalXP() {
+		return this.contentConcluded
+				.stream()
+				.mapToDouble(c -> c.calculeteXP())
+				.sum();
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<Content> getContentConcluded() {
+		return contentConcluded;
+	}
+
+	public void setContentConcluded(Set<Content> contentConcluded) {
+		this.contentConcluded = contentConcluded;
+	}
+
+	public Set<Content> getContentRegistered() {
+		return contentRegistered;
+	}
+
+	public void setContentRegistered(Set<Content> contentRegistered) {
+		this.contentRegistered = contentRegistered;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(contentConcluded, contentRegistered, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Dev other = (Dev) obj;
+		return Objects.equals(contentConcluded, other.contentConcluded)
+				&& Objects.equals(contentRegistered, other.contentRegistered) && Objects.equals(name, other.name);
+	}
+	
+	
+	
+}

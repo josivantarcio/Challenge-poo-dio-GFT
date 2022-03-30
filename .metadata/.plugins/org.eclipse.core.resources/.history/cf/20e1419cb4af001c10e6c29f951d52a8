@@ -1,0 +1,16 @@
+package me.dio.challengeBootcamp.entities;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Bootcamp {
+	private String description;
+	private String name;
+	private final LocalDate startDate = LocalDate.now();
+	private final LocalDate endDate = startDate.plusDays(45);
+	private Set<Dev> registereDevs = new HashSet<>();
+	private Set<Content> contents = new LinkedHashSet<>();
+	
+}

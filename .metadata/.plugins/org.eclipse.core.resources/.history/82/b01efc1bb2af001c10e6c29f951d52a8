@@ -1,0 +1,14 @@
+package me.dio.challengeBootcamp.entities;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Dev {
+	private String name;
+	/**
+	 * We will use Set() so that the user will not be included again in the same course.
+	 */
+	private Set<Content> contentConcluded = new HashSet<Content>(); 
+	private Set<Content> contentRegistered = new HashSet<Content>();
+	
+}

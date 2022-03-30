@@ -1,0 +1,11 @@
+package me.dio.challengeBootcamp.entities;
+
+import java.time.LocalDate;
+
+public class Bootcamp {
+	private String description;
+	private String name;
+	private final LocalDate startDate = LocalDate.now();
+	private final LocalDate endDate = startDate.plusDays(45);
+	
+}

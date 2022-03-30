@@ -1,0 +1,31 @@
+package me.dio.challengeBootcamp.entities;
+
+public abstract class Content {
+	
+	protected String title;
+	protected String description;
+	protected final static double XP_PADRAO = 10;
+	
+	public abstract void calculeteXP();
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public static double getXpPadrao() {
+		return XP_PADRAO;
+	}
+	
+}

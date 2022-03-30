@@ -1,0 +1,27 @@
+package me.dio.challengeBootcamp.entities;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Dev {
+	private String name;
+	/**
+	 * We will use Set() so that the user will not be included again in the same course.
+	 */
+	private Set<Content> contentConcluded = new LinkedHashSet<>(); 
+	private Set<Content> contentRegistered = new LinkedHashSet<>();
+	
+	public void writeBootcamp(Bootcamp bootCamp) {
+		
+	}
+	
+	public void progress() {
+		
+	}
+	
+	public void calcTotalXP() {
+		
+	}
+	
+}

@@ -1,0 +1,11 @@
+package me.dio.challengeBootcamp.entities;
+
+public class Content {
+	protected String title;
+	protected String description;
+	
+	public void calculeteXP() {
+		
+	}
+	
+}
